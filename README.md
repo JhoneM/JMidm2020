@@ -48,6 +48,11 @@ http://localhost:8000/
 ```
 El navegador mostrará la pagina de inicio.
 
+El sistema tambien cuenta con un gestor de bases de datos (PhpMyAdmin) alojado en un contenedor, para ingresar se debe ir a la siguiente ruta:
+```
+http://localhost:8180/
+```
+
 ## Test
 
 ## Deployment
