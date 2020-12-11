@@ -1,0 +1,8 @@
+FROM mysql:8.0.19
+
+ENV MYSQL_DATABASE ml_db
+ENV MYSQL_USER ml_user
+ENV MYSQL_PASSWORD 12345678
+ENV MYSQL_RANDOM_ROOT_PASSWORD yes
+
+COPY database/ /docker-entrypoint-initdb.d/

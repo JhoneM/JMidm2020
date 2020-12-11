@@ -1,0 +1,47 @@
+
+{% extends "base.html" %}
+{% block body %}
+<div class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12"><br/>
+                <form class="form-horizontal" action='' method="POST">
+					<fieldset>
+						<div id="legend">
+						<legend class="">Consultas</legend>
+						</div>
+						<div class="control-group" style="color:#aec251">
+                            <label class="control-label"  for="max_distance">Distancia Maxima</label>
+                            <input type="checkbox" id="max_distance" name="max_distance" value="max">
+						</div>
+                        <div class="control-group" style="color:#aec251">
+                            <label class="control-label"  for="min_distance">Distancia Minima</label>
+                            <input type="checkbox" id="min_distance" name="min_distance" value="min">
+						</div>
+                        <div class="control-group" style="color:#aec251">
+                            <label class="control-label"  for="prom_country">Cantidad Promedio de invocaciones por país</label>
+                            <input type="checkbox" id="prom_country" name="prom_country" value="prom">
+						</div>
+                        <div class="control-group" style="color:black">
+                            <select class="form-control" name="country" id="country" style="width: 20%;margin: 0 auto;" disabled>
+                                {% for value in values %}
+                                <option value="{{value['country']}}">{{value['country']}}</option>
+                                {% endfor %}
+                            </select>
+						</div>
+
+						<br/>
+						<div class="control-group">
+							<!-- Button -->
+							<div class="controls">
+								<input type="submit" class="btn btn-success" value="Consultar">
+							</div>
+						</div>
+					</fieldset>
+				</form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

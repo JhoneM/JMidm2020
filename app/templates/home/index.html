@@ -1,0 +1,19 @@
+<!-- app/templates/home/index.html -->
+
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block body %}
+<div class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="intro-message" style="color:#aec251">
+                    <h1>Bievenido {% if g.user %} {{g.user['username']}} {% endif %} </h1>
+                    <h4>Fecha: {{ fecha }} </h4>
+                    <hr class="intro-divider">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

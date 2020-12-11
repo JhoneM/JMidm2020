@@ -1,0 +1,44 @@
+
+{% extends "base.html" %}
+{% block body %}
+<div class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12"><br/>
+                {% if g.user %}
+                    <h3 style="color:black">Historico</h3> <br/>
+                    <table class="table">
+                        <thead class="thead-dark" style="color: gray;">
+                            <tr>
+                                <th scope="col" style="text-align: center;">IP</th>
+                                <th scope="col" style="text-align: center;">País</th>
+                                <th scope="col" style="text-align: center;">Distancia Kms</th>
+                                <th scope="col" style="text-align: center;">Invocaciones</th>
+                            </tr>
+                        </thead>
+                        <tbody style="color:#aec251">
+                            {% for value in values %}
+                                <tr>
+                                    <td>
+                                        {{ value["ip"] }}
+                                    </td>
+                                    <td>
+                                        {{ value["country"] }}
+                                    </td>
+                                    <td>
+                                        {{ value["distance"] }}
+                                    </td>
+                                    <td>
+                                        {{ value["count"] }}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

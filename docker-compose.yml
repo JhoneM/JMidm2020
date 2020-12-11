@@ -1,0 +1,49 @@
+version: '3'
+
+services:
+
+  ml-mysql:
+    container_name: idm-mysql
+    build:
+      context: .
+      dockerfile: Dockerfile-mysql
+    command: --default-authentication-plugin=mysql_native_password       
+    volumes:
+      - ./db_data:/var/lib/mysql  
+    restart: "no"
+    networks:
+      - agenda 
+
+  ml-web:
+    build: .
+    env_file:
+      - '.env'
+    depends_on:
+      - ml-mysql
+    ports:
+      - '8000:5000'
+    restart: "no"
+    networks:
+      - agenda 
+
+  ml-pma:
+    container_name: idm-pma
+    image: phpmyadmin/phpmyadmin     
+    depends_on:      
+      - ml-mysql
+    ports:      
+      - "8180:80"    
+    restart: "no"   
+    environment:
+     - PMA_ARBITRARY=1 
+     - PMA_HOST=idm-mysql
+     - PMA_USER=ml_user 
+     - PMA_PASSWORD=12345678 
+    networks:
+      - agenda 
+
+volumes:
+  db_data:
+
+networks:
+  agenda:     

@@ -1,0 +1,21 @@
+<!-- app/templates/home/index.html -->
+
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block body %}
+<div class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="error-content">
+                    <h3 style="color:yellow"><i class="glyphicon glyphicon-warning-sign"></i> Oops! Datos no encontrados.</h3>
+                    <p style="color:gray">
+                        No pudimos encontrar la página que buscabas.
+                        Mientras tanto, puedes volver a <a href="{{ url_for('home.index') }}"><code>Inicio</code></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

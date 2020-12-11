@@ -1,0 +1,60 @@
+
+{% extends "base.html" %}
+{% block body %}
+<div class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12"><br/>
+                {% if g.user %}
+                    <h3 style="color:black">Historico</h3> <br/>
+                    <table class="table">
+                        <thead class="thead-dark" style="color: gray;">
+                            <tr>
+                                <th scope="col" style="text-align: center;">Usuario</th>
+                                <th scope="col" style="text-align: center;">Fecha de consulta</th>
+                                <th scope="col" style="text-align: center;">Distancia MAX</th>
+                                <th scope="col" style="text-align: center;">Distancia MI</th>
+                                <th scope="col" style="text-align: center;">Promedio Inv. Pais</th>
+                            </tr>
+                        </thead>
+                        <tbody style="color:#aec251">
+                            {% for value in values %}
+                                <tr>
+                                    <td>
+                                        {{value["username"]}}
+                                    </td>
+                                    <td>
+                                        {{value["create_at"]}}
+                                    </td>
+                                    <td>
+                                        {% if value["max_distance"] == 1 %}
+                                            Si
+                                        {% else %}
+                                            No
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if value["min_distance"] == 1 %}
+                                            Si
+                                        {% else %}
+                                            No
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if value["prom_country"] == 1 %}
+                                            Si {{value["country"]}}
+                                        {% else %}
+                                            No
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
