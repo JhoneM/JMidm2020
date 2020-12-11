@@ -1,66 +1,70 @@
-# Flask-Docker-Blueprint Template
+# IDM Flask-MYSQL-Docker
 
-This project can be used to run a basic flask app with Blueprint using docker-compose.
+Para monitorear el tráfico interno se realizó una herramienta que
+enriquezca la data sobre usuarios. Para ello, entre otras fuentes, se necesita que dada
+una IP de algun usuario se obtenga cierta información.
 
-## Getting Started
+Basado en la [plantilla](https://github.com/KartikShrikantHegde/Docker-Flask-Blueprint) de [Kartik](https://github.com/KartikShrikantHegde)
 
-**Step 1:** Make sure git is installed on your os. I will be using macOS for the project.
+## Iniciando
 
-On macOS, you can install the git using Homebrew using ```brew install git```
+**Paso 1:** Asegurarse de tener instalado git en su sistema operativo.
 
-**Step 2:** Clone the project into your local machine using below command.
 
-```git clone https://github.com/KartikShrikantHegde/Docker-Flask-Blueprint.git```
+**Step 2:** Clone el proyecto en su maquina.
 
-### Prerequisites
+```git clone https://github.com/JhoneM/JMidm2020.git```
+
+### Requisitos
 
 **1. Docker**
 
-Make sure you have Docker installed. Please follow the below link for official documentation from Docker to install latest version of docker on your os. For this project I am using Docker CE (18.09).
+Asegurarse de tener docker y docker-compose instalado.
 
-```https://docs.docker.com/docker-for-mac/install/```
 
-### Installing
+### Instalación
 
-**Step 1:** Change to the directory where the project was cloned in previous step.
+**Step 1:** Acceder al directorio donde fue clonado el repo en el paso anterior.
 
 ```
-cd Docker-Flask-Blueprint
+cd JMidm2020
 ```
 
-**Step 2:** Make sure Docker is up and running. You can start the docker engine from desktop icon on Mac.
-
-**Step 3:** Run
+**Step 3:** Construir e iniciar
 
 ```
 docker-compose up --build
 ```
+Si ya se ejecuto este comando anteriormente solo se debe ejecutar:
 
-**Step 4:** Open up the browser and paste the below url
+```
+docker-compose up
+```
+
+**Step 4:** Abrir el navegador en la siguiente ruta.
 
 ```
 http://localhost:8000/
 ```
+El navegador mostrará la pagina de inicio.
 
-The browser should display Home page. The app is up and running inside a docker container using docker-compose.
-
-## Running the tests
+## Test
 
 ## Deployment
 
-## Built With
+## Construido Con
 
-* [Docker](http://www.dropwizard.io/1.0.2/docs/) -  Deployment model
-* [Flask](https://maven.apache.org/) - The web framework
-* [Python](https://rometools.github.io/rome/) - programming language
-* [pip](https://rometools.github.io/rome/) - Package and dependency manager
+* [Docker](https://www.docker.com/) -  Contenedores
+* [Flask](https://flask.palletsprojects.com/en/1.1.x/) - Web framework
+* [Python](https://www.python.org/) - Lenguaje de programación
 
-## Contributing
+## Contribuciones
 
-## Versioning
+## Version
 
-## Authors
+## Autores
 
-## License
+## Licencia
 
-## Acknowledgments
+## Agradecimientos
+* KartikShrikantHegde
