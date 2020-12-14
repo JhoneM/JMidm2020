@@ -1,8 +1,6 @@
 import mysql.connector
-import click
 
 from flask import g, current_app
-from flask.cli import with_appcontext
 
 
 def get_db():
@@ -23,18 +21,3 @@ def close_db(e=None):
 
     if db is not None:
         db.close()
-
-
-# def init_db():
-#     db, c = get_db()
-
-
-# @with_appcontext
-# def init_db_command():
-#     init_db()
-#     click.echo("Base de datos inicializada...")
-
-
-# def init_app(app):
-#     app.teardown_appcontext(close_db)
-#     app.cli.add_command(init_db_command)
